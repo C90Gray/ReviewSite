@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ReviewSite.Models.Review>
+<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbohome">
+    <h2 class="text-center">Reviews</h2>
+
+    <p>
+        <a class="btn btn-default" href="~/Reviews/Create">Create New &raquo;</a>
+    </p>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail thumbnail-@Html.DisplayFor(modelItem => item.Category.Type)">
+                    <div class="caption">
+                        <h4 class="text-center">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h4>
+                        <p>
+                            @Html.DisplayNameFor(model => model.Rating) :
+
+                            @{
+                                int i = 0;
+                                while (i < item.Rating)
+                                {
+                                    <i class="fas fa-star"></i>
+                                    i++;
+                                }
+                                while (i < 5)
+                                {
+                                    <i class="far fa-star"></i>
+                                    i++;
+                                }
+
+                            }
+                        </p>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.PublishDate)
+                        </p>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ReviewID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID })
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
