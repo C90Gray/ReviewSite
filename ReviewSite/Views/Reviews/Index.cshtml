@@ -18,6 +18,29 @@
                     <div class="caption">
                         <h4 class="text-center">
                             @Html.DisplayFor(modelItem => item.Name)
+                            @{
+                                if (item.Category.Type == "Phone")
+                                {
+                                    <i class="fas fa-phone"></i>
+                                }
+                                else if (item.Category.Type == "Tablet")
+                                {
+                                    <i class="fas fa-tablet"></i>
+                                }
+                                else if (item.Category.Type == "Computer")
+                                {
+                                    <i class="fas fa-tv"></i>
+                                }
+                                else if (item.Category.Type == "Gaming System")
+                                {
+                                    <i class="fas fa-gamepad"></i>
+                                }
+                                else
+                                {
+                                    <i class="far fa-check-square"></i>
+                                }
+                            }
+
                         </h4>
                         <p>
                             @Html.DisplayNameFor(model => model.Rating) :

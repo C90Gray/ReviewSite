@@ -1,10 +1,10 @@
 ﻿body {
-    background-image: url('Images/TechKnow.png');
+    background-image: url('Images/TechKnow2.png');
     background-position: center;
     background-repeat: round;
     padding-top: 50px;
-    padding-bottom: 20px;
 }
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -40,15 +40,17 @@ textarea {
     }
 
 .jumbohome {
-    background: radial-gradient(rgba(2, 0, 164,.9),rgba(228, 241, 255,.9))!important;
+    background: radial-gradient(rgba(228, 241, 255,.9),rgba(29, 28, 28, 0.80))!important;
     color:black!important;
     padding:20px;
     border-radius:10px;
+    margin-top:10px;
+
 }
 
 .thumbnail-default {
-    background: radial-gradient(rgba(228, 241, 255,.9),rgba(2, 0, 164,.9)) !important;
-    color: black!important;
+    background: radial-gradient(rgba(228, 241, 255,.9),rgba(29, 28, 28, 0.80)) !important;
+    color: black !important;
     border: ridge;
     margin: 5px 10px;
     max-height: 200px;
@@ -60,13 +62,13 @@ textarea {
     color:black!important;
 }
 
-h1{
+h1, h2, h3, h4, h5{
     font-weight:900;
     text-shadow:2px 2px lightgrey;
 }
 
 footer {
-    background: radial-gradient(rgb(228, 241, 255),rgb(2, 0, 164)) !important;
+    background: radial-gradient(rgba(228, 241, 255,.9),rgba(29, 28, 28, 0.80)) !important;
     color: black !important;
     margin-left: 40%;
     margin-right: 40%;
@@ -99,37 +101,37 @@ a {
 .thumbnail-Phone {
     border-radius: 10%;
     background-color: gold;
-    color: darkred;
+    color: black;
     border: ridge;
     margin: 5px 10px;
-    max-height: 200px;
+    max-height: 300px;
 }
 
 .thumbnail-Computer {
     border-radius: 10%;
     background-color: Highlight;
-    color: darkred;
+    color: black;
     border: ridge;
     margin: 5px 10px;
-    max-height: 200px;
+    max-height: 300px;
 }
 
 .thumbnail-Tablet {
     border-radius: 10%;
     background-color: fuchsia;
-    color: darkred;
+    color: black;
     border: ridge;
     margin: 5px 10px;
-    max-height: 200px;
+    max-height: 300px;
 }
 
 .thumbnail-Gaming {
     border-radius: 10%;
     background-color: wheat;
-    color: darkred;
+    color: black;
     border: ridge;
     margin: 5px 10px;
-    max-height: 200px;
+    max-height: 300px;
 }
 
 h2{
@@ -140,3 +142,4 @@ h2{
 p{
     text-align:center;
 }
+

@@ -4,77 +4,70 @@
     ViewBag.Title = "Details";
 }
 <div class="jumbohome">
-    <h2>Details</h2>
+    <h2 class="text-center">Details</h2>
 
     <div>
-        <h4>Review</h4>
+        <h4 class="text-center">@Html.DisplayFor(model => model.Name)</h4>
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Category.Type)
-            </dt>
+        <div class="thumbnail thumbnail-@Html.DisplayFor(model => model.Category.Type)">
+            <div class="row">
+                <div class="col-md-6 text-right">
 
-            <dd>
-                @Html.DisplayFor(model => model.Category.Type)
-            </dd>
+                    @Html.DisplayNameFor(model => model.Category.Type)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Category.Type)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    @Html.DisplayNameFor(model => model.PublishDate)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.PublishDate)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    @Html.DisplayNameFor(model => model.Rating)
+                </div>
+                <div class="col-md-6">
+                    @{
+                        int i = 0;
+                        while (i < Model.Rating)
+                        {
+                            <i class="fas fa-star"></i>
+                            i++;
+                        }
+                        while (i < 5)
+                        {
+                            <i class="far fa-star"></i>
+                            i++;
+                        }
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Comment)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Comment)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.PublishDate)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.PublishDate)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Rating)
-            </dt>
-
-            <dd>
-                @{
-                    int i = 0;
-                    while (i < Model.Rating)
-                    {
-                        <i class="fas fa-star"></i>
-                        i++;
                     }
-                    while (i < 5)
-                    {
-                        <i class="far fa-star"></i>
-                        i++;
-                    }
-
-                }
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.WouldReccomend)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.WouldReccomend)
-            </dd>
-
-        </dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    @Html.DisplayNameFor(model => model.WouldReccomend)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.WouldReccomend)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    @Html.DisplayNameFor(model => model.Comment)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Comment)
+                </div>
+            </div>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
 </div>
