@@ -14,10 +14,13 @@
         @foreach (var item in Model)
         {
             <div class="col-md-4">
+                @* This will style the thumbnail depending on the category the item belongs to *@
                 <div class="thumbnail thumbnail-@Html.DisplayFor(modelItem => item.Category.Type)">
                     <div class="caption">
                         <h4 class="text-center">
                             @Html.DisplayFor(modelItem => item.Name)
+
+                            @* This displays an icon based on the category the item belongs to *@
                             @{
                                 if (item.Category.Type == "Phone")
                                 {
@@ -45,6 +48,7 @@
                         <p>
                             @Html.DisplayNameFor(model => model.Rating) :
 
+                            @* This while loop creates and displays a star rating system dependant on the number inputed in the rating sections *@
                             @{
                                 int i = 0;
                                 while (i < item.Rating)

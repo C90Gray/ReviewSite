@@ -9,6 +9,8 @@
     <div>
         <h4 class="text-center">@Html.DisplayFor(model => model.Name)</h4>
         <hr />
+
+        @* This allows the thumbnail to be styled according to the category the content belongs to. (only done for obvious tech item choices)*@
         <div class="thumbnail thumbnail-@Html.DisplayFor(model => model.Category.Type)">
             <div class="row">
                 <div class="col-md-6 text-right">
@@ -32,6 +34,8 @@
                     @Html.DisplayNameFor(model => model.Rating)
                 </div>
                 <div class="col-md-6">
+                    @* This while loop displays stars with fontawesome depending on the int value entered in the rating section
+                        The first part displays the closed stars while the second displays the open stars with a limit on 5 stars total*@
                     @{
                         int i = 0;
                         while (i < Model.Rating)
